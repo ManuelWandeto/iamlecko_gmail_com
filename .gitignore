@@ -1,0 +1,9 @@
+.cache/
+.local/
+.vscode-server/
+blacklist/
+tmp/
+.bash*
+.profile
+.wget-hsts
+.gitconfig
