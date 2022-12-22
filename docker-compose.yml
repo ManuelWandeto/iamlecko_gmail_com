@@ -20,7 +20,12 @@ services:
     container_name: pelias_api
     user: "${DOCKER_USER}"
     restart: always
-    environment: [ "PORT=4000" ]
+    environment: [ 
+      "PORT=4000",
+      "VIRTUAL_HOST=${NGINX_DOMAIN}",
+      "LETSENCRYPT_HOST=${NGINX_DOMAIN}",
+      "VIRTUAL_PORT=4000"
+    ]
     ports: [ "0.0.0.0:4000:4000" ]
     volumes:
       - "./pelias.json:/code/pelias.json"
